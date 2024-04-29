@@ -27,9 +27,7 @@ spec:
         image: rabbitmq
         args:
         - "--ignore-db-dir=lost+found"
-        envFrom:
-        - configMapRef:
-            name: rabbitmq
+        envFrom:        
         - secretRef:
             name: rabbitmq
   
