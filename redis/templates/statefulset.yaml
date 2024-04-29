@@ -24,7 +24,7 @@ spec:
     spec:      
       containers:
       - name: redis
-        image: "ramana11k/redis:{{ .Values.statefulset.imageVersion }}"        
+        image: redis # not configuring becoz getting the image from public 
           
         volumeMounts:
         - name: redis
