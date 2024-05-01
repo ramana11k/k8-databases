@@ -25,13 +25,10 @@ spec:
     spec:      
       containers:
       - name: rabbitmq
-        image: rabbitmq
-        args:
-        - "--ignore-db-dir=lost+found"
+        image: rabbitmq        
         envFrom:        
         - secretRef:
-            name: rabbitmq
-  
+            name: rabbitmq  
         volumeMounts:
         - name: rabbitmq
           mountPath: /var/lib/rabbitmq
@@ -47,7 +44,7 @@ spec:
 
 ---
 
-### shiva yaml file
+# ## shiva yaml file
 # apiVersion: apps/v1
 # kind: StatefulSet
 # metadata:
