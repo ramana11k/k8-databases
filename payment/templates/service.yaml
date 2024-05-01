@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: shipping
+  name: payment
   namespace: roboshop
 spec:
   selector:
-    app: shipping
+    app: payment
     project: roboshop
     tier: app    
   ports:
