@@ -2,10 +2,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: user
+  name: cart
   namespace: roboshop
   labels:
-    app: user
+    app: cart
     project: roboshop
     tier: app
 spec:
@@ -13,19 +13,19 @@ spec:
   replicas: {{ .Values.deployment.replicas }}
   selector:
     matchLabels:
-      app: user
+      app: cart
       project: roboshop
       tier: app
   template:
     metadata:
       labels:
-        app: user
+        app: cart
         project: roboshop
         tier: app
     spec:
       containers:
-      - name: user
-        image: "ramana11k/user:{{ .Values.deployment.imageVersion }}"
+      - name: cart
+        image: "ramana11k/cart:{{ .Values.deployment.imageVersion }}"
         imagePullPolicy: Always
         resources:
           requests:
@@ -37,5 +37,5 @@ spec:
 
         envFrom:
         - configMapRef:
-            name: user
+            name: cart
   
